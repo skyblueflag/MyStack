@@ -43,9 +43,8 @@ void PopStackLink(StackLink *S){
         S = S->Next;
     }
     p = S->Next;
-    p->data = S->Next->data;
     /* 更新头结点 */
-    S->Next = NULL;
+    S->Next = p->Next;
     /* 栈的容量-1 */
     --S->StackLinkSize;
     /* 释放头结点 */
